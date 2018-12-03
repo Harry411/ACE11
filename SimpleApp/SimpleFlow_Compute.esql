@@ -5,7 +5,7 @@ CREATE COMPUTE MODULE SimpleFlow_Compute
 	BEGIN
 		-- CALL CopyMessageHeaders();
 		-- CALL CopyEntireMessage();
-		SET OutputRoot.XMLNSC.Message ='Hello Nexright ACE service-Test2 from GitRepos-NexrightDemoReview-Latest-Bikram-review final testig from nr head quarters bbsr ';
+		SET OutputRoot.XMLNSC.Message ='Hello Nexright ACE service-Test2 from GitRepos-NexrightDemoReview-Latest-Bikram-review final testig from nr head quarters bbsr dlf ';
 		RETURN TRUE;
 	END;
 
