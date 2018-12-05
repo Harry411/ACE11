@@ -5,7 +5,7 @@ CREATE COMPUTE MODULE SimpleFlow_Compute
 	BEGIN
 		-- CALL CopyMessageHeaders();
 		-- CALL CopyEntireMessage();
-		SET OutputRoot.XMLNSC.Message ='Hello Nexright ACE container 1';
+		SET OutputRoot.XMLNSC.Message ='Hello Nexright ACE container 1 demo';
 		RETURN TRUE;
 	END;
 
