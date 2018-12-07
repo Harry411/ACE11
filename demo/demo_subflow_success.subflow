@@ -15,7 +15,7 @@
       <nodes xmi:type="ComIbmTryCatch.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_4" location="288,238">
         <translation xmi:type="utility:ConstantString" string="Try Catch"/>
       </nodes>
-      <nodes xmi:type="ComIbmCompute.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_6" location="615,342" dataSource="MySql" computeExpression="esql://routine/#demo_subflow_Compute1.Main">
+      <nodes xmi:type="ComIbmCompute.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_6" location="615,342" dataSource="AWS" computeExpression="esql://routine/#demo_subflow_Compute1.Main">
         <translation xmi:type="utility:ConstantString" string="Insert Into Database"/>
       </nodes>
       <nodes xmi:type="demo_subflow_failure.subflow:FCMComposite_1" xmi:id="FCMComposite_1_1" location="611,114">
