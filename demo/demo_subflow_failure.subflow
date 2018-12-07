@@ -15,7 +15,7 @@
       <nodes xmi:type="ComIbmCompute.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_2" location="430,280" computeExpression="esql://routine/#demo_subflow_failure_Compute.Main" computeMode="destination">
         <translation xmi:type="utility:ConstantString" string="Unique File names for errors"/>
       </nodes>
-      <nodes xmi:type="ComIbmFileOutput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_4" location="809,285" outputDirectory="c:/error">
+      <nodes xmi:type="ComIbmFileOutput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_4" location="809,285" outputDirectory="/error">
         <translation xmi:type="utility:ConstantString" string="File Output"/>
       </nodes>
       <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_4" targetNode="FCMComposite_1_4" sourceNode="FCMComposite_1_2" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
