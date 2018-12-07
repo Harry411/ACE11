@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="DeliveryNote_MS" targetNamespace="http://lovisa.com.au/DeliveryNote" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://lovisa.com.au/DeliveryNote" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:documentation>
+    <wsdl:appinfo source="WMQI_APPINFO">
+      <MRWSDLAppInfo imported="true">
+        <binding hasEncoding="false" imported="true" name="DeliveryNote_MSSOAP_HTTP_Binding" originalBindingStyle="document"/>
+      </MRWSDLAppInfo>
+    </wsdl:appinfo>
+  </wsdl:documentation>
+  
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://lovisa.com.au/DeliveryNote" xmlns:mrm="http://lovisa.com.au/DeliveryNote">
+<xsd:include schemaLocation="DeliveryNote_MSService_InlineSchema1.xsd"/>
+</xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="setDeliveryNoteAllocToClose_in">
+    <wsdl:part element="tns:AllocToClose" name="AllocToClose"/>
+  </wsdl:message>
+  <wsdl:message name="setDeliveryNoteAllocToClose_out">
+    <wsdl:part element="tns:DeliveryNoteResponse" name="DeliveryNoteResponse"/>
+  </wsdl:message>
+  <wsdl:message name="setDeliveryNote_in">
+    <wsdl:part element="tns:NewDataSet" name="NewDataSet"/>
+  </wsdl:message>
+  <wsdl:message name="setDeliveryNote_out">
+    <wsdl:part element="tns:DeliveryNoteResponse" name="DeliveryNoteResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="DeliveryNote_MSPortType">
+    <wsdl:operation name="setDeliveryNoteAllocToClose">
+      <wsdl:input message="tns:setDeliveryNoteAllocToClose_in" name="setDeliveryNoteAllocToClose_Input"/>
+      <wsdl:output message="tns:setDeliveryNoteAllocToClose_out" name="setDeliveryNoteAllocToClose_Output"/>
+    </wsdl:operation>
+    <wsdl:operation name="setDeliveryNote">
+      <wsdl:input message="tns:setDeliveryNote_in" name="setDeliveryNote_Input"/>
+      <wsdl:output message="tns:setDeliveryNote_out" name="setDeliveryNote_Output"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DeliveryNote_MSSOAP_HTTP_Binding" type="tns:DeliveryNote_MSPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="setDeliveryNoteAllocToClose">
+      <soap:operation soapAction="deliveryNote"/>
+      <wsdl:input name="setDeliveryNoteAllocToClose_Input">
+        <soap:body parts="AllocToClose" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="setDeliveryNoteAllocToClose_Output">
+        <soap:body parts="DeliveryNoteResponse" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setDeliveryNote">
+      <soap:operation soapAction="deliveryNote"/>
+      <wsdl:input name="setDeliveryNote_Input">
+        <soap:body parts="NewDataSet" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="setDeliveryNote_Output">
+        <soap:body parts="DeliveryNoteResponse" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DeliveryNote_MSSOAP_HTTP_Service">
+    <wsdl:port binding="tns:DeliveryNote_MSSOAP_HTTP_Binding" name="DeliveryNote_MSSOAP_HTTP_Port">
+      <soap:address location="http://api.lovisa.com.au:8085/3pldeliverynotesoap"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

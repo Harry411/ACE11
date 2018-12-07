@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://lovisa.com.au/DeliveryNote" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" xmlns:mrm="http://lovisa.com.au/DeliveryNote" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://lovisa.com.au/DeliveryNote" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+                                                                                                                                                          <xsd:element name="WHDelNote" type="xsd:string"/>
+            <xsd:element name="DNNumber" type="xsd:string"/>
+            <xsd:element name="FromLocation" type="xsd:string"/>
+            <xsd:element name="Branch" type="xsd:string"/>
+            <xsd:element name="Picklist" type="xsd:string"/>
+            <xsd:element name="AllocationLine" type="xsd:string"/>
+            <xsd:element name="DNLine" type="xsd:string"/>
+            <xsd:element name="RefNo" type="xsd:string"/>
+            <xsd:element name="Quantity" type="xsd:string"/>
+            <xsd:element name="DnDate" type="xsd:string"/>
+            <xsd:element name="status" type="xsd:string"/>
+            <xsd:element name="TxnRefNumber" type="xsd:string"/>
+            <xsd:element name="messageCode" type="xsd:string"/>
+            <xsd:element name="messageDescription" type="xsd:string"/>
+            <xsd:complexType name="LineDetail">
+        <xsd:sequence>
+          <xsd:element ref="mrm:Picklist"/>
+          <xsd:element ref="mrm:AllocationLine"/>
+          <xsd:element ref="mrm:DNLine"/>
+          <xsd:element ref="mrm:RefNo"/>
+          <xsd:element ref="mrm:Quantity"/>
+        </xsd:sequence>
+      </xsd:complexType>
+            <xsd:element name="LineDetail" type="mrm:LineDetail"/>
+            <xsd:complexType name="Out">
+        <xsd:sequence>
+          <xsd:element ref="mrm:WHDelNote"/>
+          <xsd:element ref="mrm:DNNumber"/>
+          <xsd:element ref="mrm:FromLocation"/>
+          <xsd:element ref="mrm:Branch"/>
+          <xsd:element ref="mrm:DnDate"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="1" ref="mrm:LineDetail"/>
+        </xsd:sequence>
+      </xsd:complexType>
+            <xsd:element name="Out" type="mrm:Out"/>
+            <xsd:complexType name="NewDataSet">
+        <xsd:sequence>
+          <xsd:element ref="mrm:Out"/>
+        </xsd:sequence>
+      </xsd:complexType>
+            <xsd:element ibmSchExtn:docRoot="true" name="NewDataSet" type="mrm:NewDataSet"/>
+            <xsd:complexType name="DeliveryNoteResponse">
+        <xsd:sequence>
+          <xsd:element ref="mrm:DNNumber"/>
+          <xsd:element ref="mrm:status"/>
+          <xsd:element ref="mrm:TxnRefNumber"/>
+          <xsd:element ref="mrm:messageCode"/>
+          <xsd:element ref="mrm:messageDescription"/>
+        </xsd:sequence>
+      </xsd:complexType>
+            <xsd:element ibmSchExtn:docRoot="true" name="DeliveryNoteResponse" type="mrm:DeliveryNoteResponse"/>
+            <xsd:complexType name="AllocToClose">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" ref="mrm:Picklist"/>
+        </xsd:sequence>
+      </xsd:complexType>
+            <xsd:element ibmSchExtn:docRoot="true" name="AllocToClose" type="mrm:AllocToClose"/>
+        </xsd:schema>

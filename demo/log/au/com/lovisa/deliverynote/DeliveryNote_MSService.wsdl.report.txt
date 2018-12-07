@@ -1,0 +1,25 @@
+
+
+Importing file: C:\Users\nexright\IBM\IIBT10\workspace\APP_3PL_DELIVERY_NOTE\DeliveryNote_MSService.wsdl
+
+The WSDL import will proceed with bindings DeliveryNote_MSSOAP_HTTP_Binding.
+Creating wsdl schema document for file:///C:/Users/nexright/IBM/IIBT10/workspace/APP_3PL_DELIVERY_NOTE/DeliveryNote_MSService.wsdl.
+Parsing wsdl binding {http://lovisa.com.au/DeliveryNote}DeliveryNote_MSSOAP_HTTP_Binding.
+Parsing wsdl binding input setDeliveryNoteAllocToClose.
+Parsing wsdl binding output setDeliveryNoteAllocToClose.
+Parsing wsdl binding input setDeliveryNote.
+Parsing wsdl binding output setDeliveryNote.
+Processing doc style for operation setDeliveryNoteAllocToClose.
+Processing doc style for operation setDeliveryNote.
+Populating WSDL schema DeliveryNote_MSService.xsd.
+Creating file DeliveryNote_MSService.xsd in the workspace.
+Creating file DeliveryNote_MSService_InlineSchema1.xsd in the workspace.
+Copying source WSDL DeliveryNote_MSService.wsdl to DeliveryNote_MSService.wsdl.
+
+Elapsed time processing this message definition file: 0.36 seconds
+Number of warnings for this message definition file: 0
+
+
+Number of files processed: 1
+
+
