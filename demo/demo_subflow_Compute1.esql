@@ -9,9 +9,9 @@ CREATE COMPUTE MODULE demo_subflow_Compute1
 		
 		DECLARE desc CHARACTER;
 		SET desc='this is a test';
-		PASSTHRU('INSERT INTO dbo.demo2(id,name,desc) Values(?,?,?)',id , name,desc);
+	--	PASSTHRU('INSERT INTO dbo.demo2(id,name,desc) Values(?,?,?)',id , name,desc);
 		
-	--	PASSTHRU('INSERT INTO dbo.error(id,name) Values(?,?)', id,name);
+		PASSTHRU('INSERT INTO dbo.error(id,name) Values(?,?)', id,name);
 		-- CALL CopyMessageHeaders();
 		-- CALL CopyEntireMessage();
 		RETURN TRUE;
