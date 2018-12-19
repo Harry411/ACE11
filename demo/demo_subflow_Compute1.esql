@@ -7,7 +7,11 @@ CREATE COMPUTE MODULE demo_subflow_Compute1
 		DECLARE name CHARACTER InputBody.person.name;
 		--INSERT INTO Database.MySql.demo.error values (id,name);
 		
-		PASSTHRU('INSERT INTO dbo.error(id,name) Values(?,?)', id,name);
+		DECLARE desc CHARACTER;
+		SET desc='this is a test';
+		PASSTHRU('INSERT INTO demo.dbo.demo2(id,name,desc) Values(?,?,?)',id , name,desc);
+		
+	--	PASSTHRU('INSERT INTO dbo.error(id,name) Values(?,?)', id,name);
 		-- CALL CopyMessageHeaders();
 		-- CALL CopyEntireMessage();
 		RETURN TRUE;
