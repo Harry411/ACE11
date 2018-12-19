@@ -6,6 +6,7 @@ CREATE COMPUTE MODULE demo_subflow_Compute1
 		DECLARE id INTEGER InputBody.person.id;
 		DECLARE name CHARACTER InputBody.person.name;
 		--INSERT INTO Database.MySql.demo.error values (id,name);
+		
 		PASSTHRU('INSERT INTO dbo.error(id,name) Values(?,?)', id,name);
 		-- CALL CopyMessageHeaders();
 		-- CALL CopyEntireMessage();
